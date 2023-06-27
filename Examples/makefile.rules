@@ -47,8 +47,12 @@ endif
 %${OBJ_SUFFIX}: %.cpp
 	$(CXX) ${MYDEFINES} ${COPT} $(TOOL_CXXFLAGS) $(CXXFLAGS) $(TOOL_INCLUDES) $(PIN_CXXFLAGS) ${COMP_OBJ}$@ $<
 
-pinplay-debugger-shell$(OBJ_SUFFIX): pinplay-debugger-shell.cpp
+pinplay-driver.so:  pinplay-driver${OBJ_SUFFIX}
+	$(LINKER) $(TOOL_LDFLAGS) $(LINK_EXE)$@ $^ $(TOOL_LPATHS) $(TOOL_LIBS) $(MYLIBS) $(EXTRA_LIBS) $(PIN_LIBS) $(DBG)
+
+# No debugger-shell file, comment out
+# pinplay-debugger-shell$(OBJ_SUFFIX): pinplay-debugger-shell.cpp
 	$(CXX) ${MYDEFINES} ${COPT} $(TOOL_CXXFLAGS) $(CXXFLAGS) $(TOOL_INCLUDES) $(PIN_CXXFLAGS) ${COMP_OBJ}$@ $<
 
-pinplay-driver.so:  pinplay-driver${OBJ_SUFFIX} pinplay-debugger-shell$(OBJ_SUFFIX)
+# pinplay-driver.so:  pinplay-driver${OBJ_SUFFIX} pinplay-debugger-shell$(OBJ_SUFFIX)
 	$(LINKER) $(TOOL_LDFLAGS) $(LINK_EXE)$@ $^ $(TOOL_LPATHS) $(TOOL_LIBS) $(MYLIBS) $(EXTRA_LIBS) $(PIN_LIBS) $(DBG)

@@ -113,7 +113,8 @@ debug   = False
 
 # Location of the Python script directories within the Pin and SDE kits
 #
-pin_script_path = os.path.join('extras', 'pinplay', 'scripts')
+# pin_script_path = os.path.join('extras', 'pinplay', 'scripts')
+pin_script_path = os.path.join('pinplay', 'scripts')
 sde_script_path = 'pinplay-scripts'
 
 # Default file name for the application tracing configuration information

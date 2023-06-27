@@ -45,19 +45,19 @@ main(int argc, char *argv[])
      sde_init();
      PIN_InitSymbols();
      my_pinplay_engine = sde_tracing_get_pinplay_engine();
-    DEBUG_STATUS debugStatus = PIN_GetDebugStatus();
+    // DEBUG_STATUS debugStatus = PIN_GetDebugStatus();
 
-    if (debugStatus != DEBUG_STATUS_DISABLED) 
-    {
-        shell = DR_DEBUGGER_SHELL::CreatePinPlayShell();
-        DR_DEBUGGER_SHELL::STARTUP_ARGUMENTS args;
-        if (my_pinplay_engine->IsReplayerActive()) 
-        {
-            args._customInstrumentor = CreatePinPlayInstrumentor(shell);
-        }
-        if (!shell->Enable(args))
-            return 1;
-    }
+    // if (debugStatus != DEBUG_STATUS_DISABLED) 
+    // {
+    //     shell = DR_DEBUGGER_SHELL::CreatePinPlayShell();
+    //     DR_DEBUGGER_SHELL::STARTUP_ARGUMENTS args;
+    //     if (my_pinplay_engine->IsReplayerActive()) 
+    //     {
+    //         args._customInstrumentor = CreatePinPlayInstrumentor(shell);
+    //     }
+    //     if (!shell->Enable(args))
+    //         return 1;
+    // }
 
     isimpoint.activate(argc, argv);
 

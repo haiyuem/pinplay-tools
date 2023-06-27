@@ -89,7 +89,8 @@ class Kit(object):
 
     # Path to the Pin binary itself for both architectures.
     #
-    pin_dir = os.path.join('extras', 'pinplay', 'bin')
+    # pin_dir = os.path.join('extras', 'pinplay', 'bin')
+    pin_dir = os.path.join('pinplay')
 
     # Paths to the PinPlay driver for both architectures.
     #
@@ -107,7 +108,8 @@ class Kit(object):
 
     # Path to simpoint
     #
-    simpoint_path = os.path.join('extras', 'pinplay', 'PinPoints', 'bin')
+    # simpoint_path = os.path.join('extras', 'pinplay', 'PinPoints', 'bin')
+    simpoint_path = os.path.join('pinplay', 'PinPoints', 'bin')
 
     # Knobs which have the same behavior in the various kits, but a different
     # name in each kit.
@@ -169,9 +171,10 @@ class Kit(object):
 
             # See if the 32-bit driver exists
             #
-            arch = 'ia32'
-            if os.path.isfile(os.path.join(path, self.driver_ia32)):
-                return True
+            # arch = 'ia32'
+            # if os.path.isfile(os.path.join(path, self.driver_ia32)):
+            #     return True
+            return True
 
         # There is a valid 'pinbin' binary, or this method wouldn't get called, but
         # there isn't a valid pinplay-driver.
