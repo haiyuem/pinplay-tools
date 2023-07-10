@@ -54,11 +54,11 @@ class SDEPinPoints(pinpoints.PinPoints):
     Top level script for tracing with SDE/PinPlay derived from class PinPoints.
     """
 
-    logger_cmd = 'sde_logger.py'
-    replay_cmd = 'sde_replay_dir.py'
-    replayer_cmd = 'sde_replayer.py'
+    logger_cmd = 'python3 /home/hm2595/pintool/pinplay-tools/pinplay-scripts/sde_logger.py'
+    replay_cmd = 'python3 /home/hm2595/pintool/pinplay-tools/pinplay-scripts/sde_replay_dir.py'
+    replayer_cmd = '/home/hm2595/pintool/pinplay-tools/pinplay-scripts/sde_replayer.py'
     #sim_replay_cmd = 'sde_cmpsim_replay_dir.py'
-    sim_run_cmd = 'sim_run_dir.py'
+    sim_run_cmd = '/home/hm2595/pintool/pinplay-tools/pinplay-scripts/sim_run_dir.py'
 
     def PrintHome(self, options):
         """

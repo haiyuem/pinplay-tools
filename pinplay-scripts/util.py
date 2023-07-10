@@ -2551,13 +2551,14 @@ def GetRegionInfo(file_name, options, use_file_fields=False):
     icount=0
     calc_region=0
     tid=-1
-    if config.global_regions:
-      try:
+    # Just extracting region_num from filename under dir *.pp, not sure why it needs to be global_regions
+    # if config.global_regions:
+    try:
         region_num = fields['region_num']
-      except KeyError:
+    except KeyError:
         err_msg('region_num', file_name)
         return -1
-      return (icount, warmup, prolog, calc_region, epilog, tid, region_num)
+        # return (icount, warmup, prolog, calc_region, epilog, tid, region_num)
     try:
         tid = fields['tid']
     except KeyError:
